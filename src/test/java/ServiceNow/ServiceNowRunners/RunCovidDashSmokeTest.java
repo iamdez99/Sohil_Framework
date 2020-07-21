@@ -1,9 +1,8 @@
-package ServiceNow.runners.LdLink;
+package ServiceNow.ServiceNowRunners;
 
 import java.io.File;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
 import com.nci.automation.utils.LocalConfUtils;
 import com.nci.automation.web.ConfUtils;
 
@@ -18,9 +17,9 @@ import cucumber.api.junit.Cucumber;
 		, "json:target/cucumber.json"
 		, "junit:target/cucumber.xml"
 		, "rerun:target/failed.txt","pretty"}
-		, features=""
-		, glue=""
-		, tags=""
+		, features="ServiceNow/ServiceNow-resources/CovidDashFeatures"
+		, glue="coviddash.steps"
+		, tags="@smoke"
 		, dryRun = false
 		, monochrome=true
 		, strict = true
@@ -29,9 +28,9 @@ import cucumber.api.junit.Cucumber;
 
 /**
  * This class is annotated with @RunWith(Cucumber.class) and it will run cucumber feature(s).
- * @author sohilz2
+ *  @author sohilz2
  */
-public class RunLdLinkRegressionTests {
+public class RunCovidDashSmokeTest {
 
 	@BeforeClass
 	public static void runSetup() {

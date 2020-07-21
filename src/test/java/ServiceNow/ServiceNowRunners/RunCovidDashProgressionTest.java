@@ -1,4 +1,4 @@
-package AnalysisTools.runners.coviddash;
+package ServiceNow.ServiceNowRunners;
 
 import java.io.File;
 import org.junit.BeforeClass;
@@ -19,7 +19,7 @@ import cucumber.api.junit.Cucumber;
 		, "rerun:target/failed.txt","pretty"}
 		, features="ServiceNow/ServiceNow-resources/CovidDashFeatures"
 		, glue="coviddash.steps"
-		, tags="@regression"
+		, tags="@progression"
 		, dryRun = false
 		, monochrome=true
 		, strict = true
@@ -30,7 +30,7 @@ import cucumber.api.junit.Cucumber;
  * This class is annotated with @RunWith(Cucumber.class) and it will run cucumber feature(s).
  *  @author sohilz2
  */
-public class RunCovidDashRegressionTest {
+public class RunCovidDashProgressionTest {
 
 	@BeforeClass
 	public static void runSetup() {
