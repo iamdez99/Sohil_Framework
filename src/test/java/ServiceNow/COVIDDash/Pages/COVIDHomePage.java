@@ -18,108 +18,146 @@ import ldLink.utils.COVIDConstants;
 public class COVIDHomePage extends CommonUtils {
 
 	// add xpaths
+	/** iTrust 'Log in to access' button */
 	@FindBy(xpath = "//button[@ng-click='c.login()']")
 	private WebElement iTrustRedirectForLogin;
 
+	/** Log out drop down */
 	@FindBy(xpath = "//span[contains(@class,'user-name')]")
 	private WebElement covidHomeLogoutDD;
 
+	/** Log out link */
 	@FindBy(xpath = "//a[@ng-click='logout();']")
 	private WebElement covidHomeLogoutLink;
 
+	/** Principal Investigator drop down */
 	@FindBy(xpath = "//span[@class='select2-arrow']")
 	private WebElement principalInvestigatorDD;
 
+	/** Principal Investigator search box */
 	@FindBy(xpath = "//input[@id='s2id_autogen2_search']")
 	private WebElement pISearchBox;
 
+	/** All drop down values */
 	@FindBy(xpath = "//ul[@id='select2-results-2']/li/div")
 	private List<WebElement> ddValues;
 
+	/** Institute text box */
 	@FindBy(xpath = "//input[@id='institution']")
 	private WebElement instituteField;
 
+	/** Division text box */
 	@FindBy(xpath = "//input[@id='division']")
 	private WebElement divisionField;
 
+	/** Email address text box */
 	@FindBy(xpath = "//input[@id='piEmail']")
 	private WebElement emailAddressField;
 
+	/** Phone number text box */
 	@FindBy(xpath = "//input[@id='piPhone']")
 	private WebElement phonNumberField;
 
+	/** IRB Protocol Number text box */
 	@FindBy(xpath = "//input[@id='irb-protocol']")
 	private WebElement ibrProtocolField;
 
+	/** Study Title text box */
 	@FindBy(xpath = "//input[@id='study-title']")
 	private WebElement studyTileField;
 
+	/** Biospecimen Types drop down */
 	@FindBy(xpath = "//button[contains(@class,'multiselect')]")
 	private WebElement biospaecimenTypeDd;
 
+	/** Biospecimen Types drop down values */
 	@FindBy(xpath = "//ul[contains(@class,'multiselect')]//label")
 	private List<WebElement> biospaecimenTypeDdValues;
 
+	/** Biospecimen Collection Frequency drop down */
 	@FindBy(xpath = "//input[@id='other-biospecimen-type']")
 	private WebElement otherBiospecimentType;
 
+	/** Biospecimen Collection Frequency drop down values */
 	@FindBy(xpath = "//select[@id='collection-frequency']")
 	private WebElement collectionFrequencyDd;
 
+	/** Repository Location drop down */
 	@FindBy(xpath = "//select[@id='repository-location']")
 	private WebElement repositoryLocationDd;
 
+	/** Study Specific Aims text box */
 	@FindBy(xpath = "//textarea[@id='specific-aims']")
 	private WebElement studySpecificAims;
 
+	/** Study Documentation attachment */
 	@FindBy(xpath = "//input[@id='attachment-input']")
 	private WebElement attachmentButton;
 
+	/** Related URL(s) Button */
 	@FindBy(xpath = "//a[@class='url-btn']")
 	private WebElement urlButton;
 
+	/** URL text field */
 	@FindBy(xpath = "//input[@id='url-input']")
 	private WebElement urlField;
 
+	/** URL add button */
 	@FindBy(xpath = "//a[@name='add']")
 	private WebElement urlAddButton;
 
+	/** URL delete button */
 	@FindBy(xpath = "//i[@ng-click='c.removeUrl(url);']")
 	private List<WebElement> urlDeleteButton;
 
+	/** URL save button */
 	@FindBy(xpath = "//button[@ng-click='c.addNewUrl();']")
 	private WebElement urlSaveButton;
 
+	/** Added URL Link */
 	@FindBy(xpath = "//h4[text()='Related URL(s)']/following::a[1]")
 	private WebElement addedUrlLink;
 
+	/** Submit button */
 	@FindBy(xpath = "//button[@ng-click='c.confirmSubmission();']")
 	private WebElement submitButton;
 
+	/** Confirmation submit button */
 	@FindBy(xpath = "//button[text()='Confirm and Submit']")
 	private WebElement confirmSubmitButton;
 
+	/** Uploaded file */
 	@FindBy(xpath = "//div[@class='uploaded-files']/div/p")
 	private WebElement uploadedFile;
 
+	/** Go back button */
 	@FindBy(xpath = "//*[@id='error-modal']/div/div/div[3]/button")
 	private WebElement goBackButton;
 
+	/** Study documentation error message text */
 	@FindBy(xpath = "//*[text()=' Study documentation is required. Please attach the appropriate file(s). ']")
 	private WebElement studyDocumentationErrorMessage;
 
+	/** Home page verbiage */
 	@FindBy(xpath = "//p[@class='text-content']")
 	private WebElement homePageVerbiage;
 
+	/**
+	 * IRB protocol number message when using same IRB protocol number previously
+	 * used
+	 */
 	@FindBy(xpath = "//*[text()=' Please enter an IRB protocol number. This field is required. ']")
 	private WebElement irbProtocolNumberErrormsg;
 
+	/** Study title error message */
 	@FindBy(xpath = "//*[text()=' Please enter a title for this study. This field is required. ']")
 	private WebElement studyTitleErrorMsg;
 
+	/** Biospecimen error message */
 	@FindBy(xpath = "//*[text()=' Please select the appropriate collection frequency. This field is required. ']")
 	private WebElement biospecimenCollFreqErrorMessage;
 
+	/** Study specific aims error message */
 	@FindBy(xpath = "//p[text()=' Please enter the study specific aims. This field is required. ']")
 	private WebElement studySpecificAimsErrorMessage;
 
@@ -137,6 +175,7 @@ public class COVIDHomePage extends CommonUtils {
 		iTrustRedirectForLogin.click();
 	}
 
+	/** This method will search and select a PI */
 	public void searchPrincipalInvestigator(String investgatorName) {
 		principalInvestigatorDD.click();
 		pISearchBox.sendKeys(investgatorName);
@@ -145,6 +184,7 @@ public class COVIDHomePage extends CommonUtils {
 		MiscUtils.sleep(1000);
 	}
 
+	
 	public WebElement instituteField() {
 		return instituteField;
 	}
