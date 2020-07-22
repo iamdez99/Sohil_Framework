@@ -19,7 +19,7 @@ import cucumber.api.junit.Cucumber;
 		, "rerun:target/failed.txt","pretty"}
 		, features="ServiceNow/ServiceNow-resources/CovidDashFeatures"
 		, glue="coviddash.steps"
-		, tags="@regression"
+		, tags="@smoke"
 		, dryRun = false
 		, monochrome=true
 		, strict = true
@@ -30,7 +30,7 @@ import cucumber.api.junit.Cucumber;
  * This class is annotated with @RunWith(Cucumber.class) and it will run cucumber feature(s).
  *  @author sohilz2
  */
-public class RunCovidDashRegressionTest {
+public class RunCOVIDDashSmokeTest {
 
 	@BeforeClass
 	public static void runSetup() {
